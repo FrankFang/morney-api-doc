@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Records 记录 API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Records 记录 API</h1>
+
+      <div class="article">
+        <h2>创建记录</h2>
+        <h3>POST /records/</h3>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="required">
+                    <span class="name">amount</span>
+                </td>
+                <td>
+                  <span class="description">金额</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="required">
+                    <span class="name">category</span>
+                </td>
+                <td>
+                  <span class="description">类型</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">notes</span>
+                </td>
+                <td>
+                  <span class="description">备注</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">tag_ids</span>
+                </td>
+                <td>
+                  <span class="description">标签 ID 列表</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Response Fields</h3>
+          <table class="response-fields table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">resource</span>
+                </td>
+                <td>
+                  <span class="description">Record 对象</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">errors</span>
+                </td>
+                <td>
+                  <span class="description">Record 错误信息</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Content-Type: application/json
+Cookie: _session_id=0MwQeucJqgRYEMkHeZYyTQdBPwqZexC6vEOz3QBektbWf%2BlyNi%2BwDcl6E%2BwQXwgb%2FIOyBRpTkONQ7bf1%2BDnMXA5n916h%2Bj0d%2F6xXbsjlJ9ncbc5tIe9f07dgqGFQxuHRBgGPfJgd%2F2VorwbULwXzECy6SIn4QIuNLy6ZrEVWTkZGzVUsoBgNG1QD%2BdCukmht%2BB9H9OFx%2Fb7HraaSIuvem8EzF94HomaGMyg%2FTRlHrjp%2FhO8%3D--wn90S4UuM6CDTJ4B--wMHAXVyJBdFh2a%2FxTXijoQ%3D%3D</pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST /records/</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"amount":10000,"category":"outgoings","tag_ids":[655]}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">Content-Type: application/json; charset=utf-8
+Set-Cookie: _session_id=gsV5hnd9e%2BkhATU9TcTFKOfb32CpdK0zZNAcD9zK3xeKUUivL%2BzxSJpigm2vAnYynhC2SnTN89xThJUnneBHeaOAHMfkBdEwJlPoiSjvQHyk5%2FgOCQGO3XJzBpkCmV9X3NWZlsiyOb8VPIEupoUF16M0FDPj1Jk%2FACb2xthPTThIUkah5%2Byu%2BF2Ji%2F0PYyNyzOs5tPUXxlgmGvl1kpb4yHE4rEGbSKEH%2BwGnFCqUfZoNABU%3D--L4bZe5KQzSFiWWAE--hMOzoVKMTqNx8G80KpHmDg%3D%3D; path=/; HttpOnly</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;resource&quot;: {
+    &quot;id&quot;: 550,
+    &quot;amount&quot;: 10000,
+    &quot;notes&quot;: null,
+    &quot;category&quot;: &quot;outgoings&quot;,
+    &quot;user_id&quot;: 877,
+    &quot;created_at&quot;: &quot;2020-03-03T22:37:58.134Z&quot;,
+    &quot;updated_at&quot;: &quot;2020-03-03T22:37:58.134Z&quot;,
+    &quot;discarded_at&quot;: null,
+    &quot;tag_ids&quot;: [
+      655
+    ]
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

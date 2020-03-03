@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tags 标签 API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tags 标签 API</h1>
+
+      <div class="article">
+        <h2>更新标签</h2>
+        <h3>PATCH /tags/:id</h3>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="required">
+                    <span class="name">name</span>
+                </td>
+                <td>
+                  <span class="description">标签名</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Response Fields</h3>
+          <table class="response-fields table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">resource</span>
+                </td>
+                <td>
+                  <span class="description">Tag 对象</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">errors</span>
+                </td>
+                <td>
+                  <span class="description">Tag 出错信息</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Content-Type: application/json
+Cookie: _session_id=JMGHXea9V%2BCEBvdrpw0zcwsauAIK6i7Hk5%2F0OMMr%2BIQSc2d6UxuzekPeUGgDQK8KIhs4pl1MnMFpwALlLi8x6GwAFYsx3G9R3ZvEKJkLTRNonbSTm7Yi0grrl4uuCo6VqBKOhkuQib0elSH5HjRQQE0jSLhTnXPFFw3OzJVe5jorYwV%2FLioW5oAf54CvEXcHkps4QJ1UoIY6bL%2BzBp8SG%2BIwwNS1FErddh0pCTKyasMec1g%3D--U6oKgAW9b%2FUyWBp5--9R4VXWRYARdfPYX3ZgfYiw%3D%3D</pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">PATCH /tags/669</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"name":"测试"}</pre>
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">Content-Type: application/json; charset=utf-8
+Set-Cookie: _session_id=C9%2Fny4QaSQOIawHGvRYmowcHkGs6V8kBVZ%2BHQBsOw0ndtML34PF1ZrJIWhvSDryGJP3koLX7sCAahVKPL9AJIpHydCzv%2FpFX5jz60AjWa1841%2F6pS3zaHwSMDARyLdrvWal1qbVbbz0umvHy%2FGFpmbetbrMxdJlhHXOU81PJ18JypWzzSrAv5%2FlFIeON4Hczw6um6Z3xBynAMN916B%2F%2BKgHN4VrzqA3GKUuiOVLdExTq7%2FY%3D--%2Bmiy1%2FXivlUY%2F6We--nB7wEDmn4Y48wsJAajk3Lg%3D%3D; path=/; HttpOnly</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;resource&quot;: {
+    &quot;id&quot;: 669,
+    &quot;name&quot;: &quot;测试&quot;,
+    &quot;user_id&quot;: 888,
+    &quot;created_at&quot;: &quot;2020-03-03T22:37:58.334Z&quot;,
+    &quot;updated_at&quot;: &quot;2020-03-03T22:37:58.346Z&quot;,
+    &quot;discarded_at&quot;: null
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

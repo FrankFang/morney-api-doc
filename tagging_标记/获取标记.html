@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tagging 标记 API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tagging 标记 API</h1>
+
+      <div class="article">
+        <h2>获取标记</h2>
+        <h3>GET /taggings/:id</h3>
+
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Content-Type: application/json
+Cookie: _session_id=6i9rAGogM6%2Fk9vJtaSO2W07Msm5CrCKvTwjtlqzOWfQ2DXqqf96iKi7L2wv4fUTx8UDnOEFIbKizjo%2FfjB4%2BFeyvvTc%2F9d99AJfpCz2klNa50FpiysDY59CHc6cZUe6tI%2B3s9J6SxIZ2eMdgEAmNT8CTPZFtfR2%2B9MEJ5y%2F27PQYSgRP71oRzFwsS0b3BWvAkAuRkz7ZJpRZtLLaLgBEZJo%2F0sBnC2ivIB0ecG24PQ5%2FvsA%3D--pygcbOXm8iBzpwed--cyi07O9gr4wEtOKVozLk5Q%3D%3D</pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET /taggings/250</pre>
+
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">Content-Type: application/json; charset=utf-8
+Set-Cookie: _session_id=AWKNxK9usY686J%2BGvZioKYjHAger6Kz%2Fnd3XhrkGB4tRZDUDCA0IJkBl%2BDaeaZG0X97c3zp0rEjEhnnS7ar3V%2FN38lCq1pAmu6E7qrdHwbYmiPlBeBKJy1TdEjkRuniIKn8NRgD8ady6iO16CHovf353FKtOJGTliktGYBEPJf2lb7cCWTEKZI7pO%2FbEGSRqW6URv2u4wLZrMGUCJig7U1qGQ%2FEL3NeTfSSKeaEH2KL2kis%3D--SMNIRoQcykrpIl5O--22yw%2BqkrrzOLlHJWhHvEsg%3D%3D; path=/; HttpOnly</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;resource&quot;: {
+    &quot;id&quot;: 250,
+    &quot;tag_id&quot;: 659,
+    &quot;user_id&quot;: 882,
+    &quot;record_id&quot;: 556,
+    &quot;created_at&quot;: &quot;2020-03-03T22:37:58.225Z&quot;,
+    &quot;updated_at&quot;: &quot;2020-03-03T22:37:58.225Z&quot;,
+    &quot;discarded_at&quot;: null
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>
